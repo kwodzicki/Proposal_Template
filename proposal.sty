@@ -1,0 +1,65 @@
+% Set up the document class [paper size, font size]{class}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx,float,caption}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{url}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{acro}
+\usepackage{enumitem}
+
+\usepackage{mathspec}
+\setmainfont{Times New Roman}
+\setmathrm{Times New Roman}
+\setmathfont(Digits,Latin){Times New Roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		SET HEADER & FOOTER					SET HEADER & FOOTER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}							%Set the page style to fancy for headers
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\lastname\ - \thepage}		%Define center footer as page# of totalPages
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Set reference spacing to zero!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\oldbibliography\thebibliography
+\renewcommand{\thebibliography}[1]{
+	\singlespacing\oldbibliography{#1}\setlength{\itemsep}{0pt}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Set section titles to large font
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+\titleformat*{\section}{\bfseries}
+\titleformat*{\subsection}{\slshape}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Set custom title command
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\title}[1]{
+	\noindent\textbf{#1}\\
+	\firstname\, \lastname\\
+	Texas A\&M University\\
+	Department of Atmospheric Sciences\\
+	\today
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Remove indents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setlength{\parindent}{0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Define width of figures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength{\figwidth}
+\setlength\figwidth{0.6\textwidth}
+\captionsetup[figure]{font=normal, margin=0cm}
+\captionsetup[subfigure]{labelfont=normal, margin=0cm, justification=justified}
+\captionsetup[wrapfigure]{font=normal, margin=0.5cm}
